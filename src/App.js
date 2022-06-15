@@ -1,10 +1,12 @@
 // import logo from "./logo.svg";
 import "./App.css";
+import Post from "./Components/Post";
 
 function App() {
   return (
     <div className="app">
 
+      {/* Header */}
       <div className="app__header">
         <img
           className="app__headerImage"
@@ -17,8 +19,8 @@ function App() {
         Hello cleaver programmer's lets build an instagram clone app with
         React🚀
       </h1>
-      {/* Header */}
       {/* posts */}
+      <Post />
       {/* posts */}
     </div>
   );
