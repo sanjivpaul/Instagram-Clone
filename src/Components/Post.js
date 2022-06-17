@@ -1,24 +1,34 @@
 // rfce
 import React from "react";
-import'../Components/Post.css'
+import "../Components/Post.css";
 import { Avatar } from "@mui/material";
 
-function post() {
+function post(props) {
   return (
     <div className="post">
 
-      <Avatar></Avatar>
-
-      <h3>Username</h3>
+      <div className="post__header">
+      <Avatar
+        className="post__avatar"
+        alt={props.username}
+        src="/static/images/avatar/1.jpg"
+      />
+      <h3>{props.username}</h3>
+      </div>
       {/* header--> avatar + username */}
 
-      <img className="post__image" src="https://wallpaperaccess.com/full/203323.jpg" alt="logo" />
+      <img
+        className="post__image"
+        src={props.imageUrl}
+        alt="logo"
+      />
       {/* image */}
 
-      <h4 className="post__text"><strong>Cleaverqazi: </strong> Wow day three of live session</h4>
+      <h4 className="post__text">
+        <strong className="post__text__me">{props.username}</strong>{props.caption}</h4>
       {/* username + caption */}
-      
-      {/* 23min5sec */}
+
+      {/* */}
     </div>
   );
 }
