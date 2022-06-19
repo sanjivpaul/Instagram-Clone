@@ -1,35 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { Button, Modal } from "@mui/material";
-import { makeStyles } from "@mui/material/styles";
+// import { Button, Modal } from "@mui/material";
+// import { makeStyles } from "@mui/material/styles";
 import Post from "./Components/Post";
 import { db } from "./firebase";
 
-function getModalStyle() {
-  const top = 50;
-  const left = 50;
-
-  return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
-  };
-}
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    position: "absolute",
-    width: 400,
-    backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-  },
-}));
 
 function App() {
-  const classes = useStyles();
-  const [modalStyle] = React.useState(getModalStyle);
 
   const [posts, setPosts] = useState([]);
   const [open, setOpen] = useState(false);
@@ -57,10 +34,6 @@ function App() {
     <div className="app">
       {/* Modal */}
 
-      <Modal open={open} onClose={() => setOpen(false)}>
-        <div style={modalStyle} className={classes.paper}></div>
-        <h2>I am a modal</h2>
-      </Modal>
 
       {/* Header */}
       <div className="app__header">
@@ -71,7 +44,7 @@ function App() {
         />
       </div>
 
-      <Button onClick={() => setOpen(true)}>Sign Up</Button>
+      <button onClick={() => setOpen(true)}>Sign Up</button>
 
       <h1>
         Hello cleaver programmer's lets build an instagram clone app with
